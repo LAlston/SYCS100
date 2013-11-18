@@ -52,7 +52,6 @@ def bsearch(list, element):
                 found = True                      
                 return midpoint     
     else:                           
-        print 'Element cannot be found. List is empty.'
         return -1
 
 
