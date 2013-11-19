@@ -93,25 +93,23 @@ def search(item,numbers):
 
     
 #Lena's bsearch 
-def bsearch(list, element):              #bsearch function definition 
-    if len(list) != 0:                     #condition checking for emptiness 
+def bsearch(list, element):           
+    if len(list) != 0:                   
         first = 0                   
-        last = len(list)-1                #declaration of last index variable 
-        found = False                        #bool found variable defined 
-        while not found:                  #while loops until element is found 
-            midpoint = (first + last)/2         #updates midpoint checking
-            if (first==last) and (element != list[first]):      #when one element is left to be searched and that element is not the desired value   
-                print 'Element is not in list.'     
-                return -1                                   #ends function 
-            elif element < list[midpoint]:              #if element is less than element at current list position 
-                last = midpoint - 1                     #updates last index value 
-            elif element > list[midpoint]:              #if element is greater than element at current list positon 
-                first = midpoint + 1                    #updates first index value 
-            else:                                       #else element equals element at current list positon 
-                found = True                        #ends while loop 
-                return midpoint     #returns index of searched element 
-    else:                           #list is empty 
-        print 'Element cannot be found. List is empty.'
+        last = len(list)-1               
+        found = False                       
+        while not found:                  
+            midpoint = (first + last)/2       
+            if (first==last) and (element != list[first]):      
+                return -1                              
+            elif element < list[midpoint]:          
+                last = midpoint - 1                  
+            elif element > list[midpoint]:          
+                first = midpoint + 1                 
+            else:                                    
+                found = True                     
+                return midpoint     
+    else:                          
         return -1
 
 
@@ -152,24 +150,24 @@ def bsearch (searchList, element):
 #print bsearch(myList,9)                         #function call to bsearch passing the variable myList
 
 
-def bsearch (List, element):
+#Cesa Salaam bsearch
+def bsearch (List, element): # defining the function
     bottom = 0
     top = len(List)-1
-    if len(List)== 0:
+    if len(List)== 0: #checks if the List is empty
         return -1
     elif len(List)!= 0:
-        if element <= List[top] and element >= List[0]:
-            
-                while top >= bottom:
-                    middle = (bottom+top)//2
-                    if element == List[middle]:
+        if element <= List[top] and element >= List[0]: # checks to see if the element is within the range of the List.
+                while top >= bottom: # While loop to repeat the Binary search
+                    middle = (bottom+top)//2 #Variable to split list in half
+                    if element == List[middle]: #if statement to check if the element has been found
                         return middle
-                    elif element > List[middle]:
+                    elif element > List[middle]: #Else if statement to check if the element is above the middle
                         bottom = middle + 1
-                    elif element < List[middle]:
+                    elif element < List[middle]: #Else if statement to check if the element is below the middle
                         top = middle - 1
         else:
-            return -1
+            return str(-1) + " Your element was not found in the list, sorry try again...."
 
 #Sarah Jones
 def bsearch( lista, element):
